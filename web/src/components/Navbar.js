@@ -16,7 +16,7 @@ const Navbar = () => {
   const currentPath = window.location.pathname;
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-blue-400 shadow-md">
       <div className="px-4 py-2 flex justify-between items-center w-full">
         <div className="flex justify-between items-center text-2xl">
           <img src={logo} alt="Your Logo" className="h-12" />

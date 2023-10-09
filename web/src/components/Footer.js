@@ -65,7 +65,7 @@ function Footer() {
     ];
 
     return (
-      <div className='bg-white shadow-inner'>
+      <div className='bg-blue-400 shadow-inner'>
         <div className="navbar navbar-expand-lg navbar-inverse navbar-fixed-bottom flex justify-around items-center w-full" id="footer">
           <div className="flex justify-between" id="videos-container">
             {videoSections.map((section, idx) => (
