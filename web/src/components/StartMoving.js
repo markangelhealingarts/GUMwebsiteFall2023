@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import Button from './Button'
-
+//example
 function Start_Moving() {
   const [isDisclaimerOpen, setDisclaimerOpen] = useState(false);
   
