@@ -5,7 +5,7 @@ import Button from './Button'
 function Start_Moving() {
   const [isDisclaimerOpen, setDisclaimerOpen] = useState(false);
   
-  return{
+  return(
     <div className='move'>
       <div id="moving">
         <h1 id="moving_header">Start Moving!</h1>
@@ -32,6 +32,7 @@ function Start_Moving() {
           </Modal>
         </div>
       </div>
-    </div>
   );
 }
+
+export default Start_Moving;
