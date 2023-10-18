@@ -5,15 +5,34 @@ import Button from './Button'
 function Start_Moving() {
   const [isDisclaimerOpen, setDisclaimerOpen] = useState(false);
   
+  const linkStyle = {
+    color: 'green',  // Change the color to your desired highlight color
+    textDecoration: 'underline',  // Add underline to the link
+    fontWeight: 'bold'  // Optionally, make the text bold
+  };
+
+  const style2={fontWeight: 'bold'}
+
+  const headstyle={
+    fontSize: '22px',
+    //fontWeight: 'bold'
+  }
+
   return(
     <div className='move'>
       <div id="moving">
-        <h1 id="moving_header">Start Moving!</h1>
-        <div id="move">Each of the following activities is demonstrated at three levels of intensity based on a participants general physical capabilities: Easy, Moderate, Vigorous.\nPlease go to How to Get Up and Move for a brief overview of this program.</div>
+        <h1 id="moving_header" style={headstyle}>Start Moving!</h1>
+        <br/>
+        <div id="move">Each of the following activities is demonstrated at three levels of intensity based on a participants general physical capabilities: Easy, Moderate, Vigorous.
+        <br/>
+        Please go to <a href="https://getupandmove.net/pages/how_to.html" target="_blank" rel="noopener noreferrer" style={linkStyle}>How to Get Up and Move</a> for a brief overview of this program.
+        <br/><br/>
+      
+      </div>
     
-    <Button label="Disclaimer" onClick={() => setDisclaimerOpen(true)}/>
+      <Button label="Disclaimer" onClick={() => setDisclaimerOpen(true)}/>
 
-    <Modal isOpen={isDisclaimerOpen} onRequestClose={() => setDisclaimerOpen(false)} contentLabel="Disclaimer">
+      <Modal isOpen={isDisclaimerOpen} onRequestClose={() => setDisclaimerOpen(false)} contentLabel="Disclaimer">
         <h2>Fitness and Exercise Disclaimer</h2>
             <div className="modal-body">
               The purpose of this DISCLAIMER AND NOTICE is to make you aware of the potential risks connected with activity in any exercise, physical fitness or training program. It is also to help you make an informed decision as to whether or not you should participate in Get Up and Move and the activities associated with it. 
@@ -29,9 +48,55 @@ function Start_Moving() {
               <b>USE THIS PROGRAM AND ALL INFORMATION CONTAINED WITHIN IT AT YOUR OWN RISK</b>
             </div>
             <Button label="Close" onClick={() => setDisclaimerOpen(false)}/>
-          </Modal>
-        </div>
+      </Modal>
       </div>
+
+      <div> 
+        <br/> <h1 style={headstyle}>Guiding Videos</h1>
+      </div>
+
+      <div className="box-container">
+        <a style={style2}> 
+          Easy
+        </a>
+      </div>
+
+      <div className="box-container" style={{margin: '10px' }}>
+        <a style={style2}>
+          Moderate
+        </a>
+      </div>
+
+      <div className="box-container">
+        <a style={style2}>
+          Vigorous
+        </a>
+      </div>
+      <br/>
+
+      <div> 
+        <br/> <h1 style={headstyle}>Teaching Videos</h1>
+      </div>
+
+      <div className="box-container">
+        <a style={style2}> 
+          Easy
+        </a>
+      </div>
+
+      <div className="box-container" style={{margin: '10px' }}>
+        <a style={style2}>
+          Moderate
+        </a>
+      </div>
+
+      <div className="box-container">
+        <a style={style2}>
+          Vigorous
+        </a>
+      </div>
+
+    </div>
   );
 }
 
