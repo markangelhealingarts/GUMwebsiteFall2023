@@ -1,17 +1,18 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/img/newLogoNoText.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navItems = [
-    {name: 'Home', path: 'index.html'},
-    {name: 'Start Moving', path: 'pages/activities.html'},
-    {name: 'Tidbits', path: 'pages/tidbits.html'},
+    {name: 'Home', path: '/'},
+    {name: 'Start Moving', path: '/start_moving'},
+    {name: 'Tidbits', path: '/tidbits'},
     {name: 'Healing Arts Site', path: 'https://www.markangelhealingarts.com/', external: true},
-    {name: 'Privacy Policy', path: 'pages/privacypolicy.html'},
-    {name: 'Contact', path: 'pages/contact.html'},
-    {name: 'Login', path: 'pages/login.html'}
+    {name: 'Privacy Policy', path: '/privacypolicy'},
+    {name: 'Contact', path: '/contact'},
+    {name: 'Login', path: '/login'}
   ];
   const currentPath = window.location.pathname;
 
@@ -25,17 +26,30 @@ const Navbar = () => {
         
         {/* Desktop Menu */}
         <ul className="hidden lg:flex space-x-4 navi_ul">
-          {navItems.map(item => (
-            <li key={item.name} className="navi">
-              <a 
-                href={item.path}
-                target={item.external ? "_blank" : "_self"}
-                rel={item.external ? "noopener noreferrer" : ""}
-                className={`navi_text ${currentPath.includes(item.path) ? 'font-bold' : ''}`}>
-                {item.name}
-              </a>
-            </li>
-          ))}
+          {navItems.map(item => {
+            if (item.external) {
+              return (
+                <li key={item.name} className="navi">
+                  <a 
+                    href={item.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`navi_text ${currentPath.includes(item.path) ? 'font-bold' : ''}`}>
+                    {item.name}
+                  </a>
+                </li>
+              );
+            }
+            return (
+              <li key={item.name} className="navi">
+                <Link
+                  to={item.path}
+                  className={`navi_text ${currentPath.includes(item.path) ? 'font-bold' : ''}`}>
+                  {item.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
         
         {/* Mobile Menu Button */}
@@ -51,21 +65,34 @@ const Navbar = () => {
         {isOpen && (
           <div className="fixed top-0 right-0 w-full h-full z-10 lg:hidden bg-gray-900 bg-opacity-50">
             <div className="bg-white w-64 h-full absolute top-0 right-0 overflow-y-auto">
-            <div className="text-right">
-              <button className="p-4 mr-4" onClick={() => setIsOpen(false)}>Close</button>
-            </div>
+              <div className="text-right">
+                <button className="p-4 mr-4" onClick={() => setIsOpen(false)}>Close</button>
+              </div>
               <ul>
-                {navItems.map(item => (
-                  <li key={item.name} className="navi">
-                    <a 
-                      href={item.path}
-                      target={item.external ? "_blank" : "_self"}
-                      rel={item.external ? "noopener noreferrer" : ""}
-                      className={`navi_text block mr-4 p-4 text-right ${currentPath.includes(item.path) ? 'font-bold' : ''}`}>
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
+                {navItems.map(item => {
+                  if (item.external) {
+                    return (
+                      <li key={item.name} className="navi">
+                        <a 
+                          href={item.path}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`navi_text block mr-4 p-4 text-right ${currentPath.includes(item.path) ? 'font-bold' : ''}`}>
+                          {item.name}
+                        </a>
+                      </li>
+                    );
+                  }
+                  return (
+                    <li key={item.name} className="navi">
+                      <Link 
+                        to={item.path}
+                        className={`navi_text block mr-4 p-4 text-right ${currentPath.includes(item.path) ? 'font-bold' : ''}`}>
+                        {item.name}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
           </div>
