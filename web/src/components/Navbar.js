@@ -1,6 +1,6 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/img/newLogoNoText.png';
 
 const Navbar = () => {
@@ -34,7 +34,7 @@ const Navbar = () => {
                     href={item.path}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`navi_text ${currentPath.includes(item.path) ? 'font-bold' : ''}`}>
+                    className="navi_text">
                     {item.name}
                   </a>
                 </li>
@@ -42,11 +42,11 @@ const Navbar = () => {
             }
             return (
               <li key={item.name} className="navi">
-                <Link
+                <NavLink
                   to={item.path}
-                  className={`navi_text ${currentPath.includes(item.path) ? 'font-bold' : ''}`}>
+                  className={({ isActive }) => isActive ? 'navi_text font-bold' : 'navi_text'}>
                   {item.name}
-                </Link>
+                </NavLink>
               </li>
             );
           })}
@@ -77,7 +77,7 @@ const Navbar = () => {
                           href={item.path}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={`navi_text block mr-4 p-4 text-right ${currentPath.includes(item.path) ? 'font-bold' : ''}`}>
+                          className={`navi_text block mr-4 p-4 text-right ${currentPath.startsWith(item.path) ? 'font-bold' : ''}`}>
                           {item.name}
                         </a>
                       </li>
@@ -85,11 +85,11 @@ const Navbar = () => {
                   }
                   return (
                     <li key={item.name} className="navi">
-                      <Link 
+                      <NavLink
                         to={item.path}
-                        className={`navi_text block mr-4 p-4 text-right ${currentPath.includes(item.path) ? 'font-bold' : ''}`}>
+                        className={({ isActive }) => isActive ? 'navi_text font-bold' : 'navi_text'}>
                         {item.name}
-                      </Link>
+                      </NavLink>
                     </li>
                   );
                 })}
