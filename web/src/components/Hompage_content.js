@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import Button from './Button'
+import Button from './Button';
+import GUM_slideshow from '../assets/img/GUM_Orientation.png';
 
 function Homepage_content() {
   const [isMoreInfoOpen, setMoreInfoOpen] = useState(false);
@@ -9,7 +10,7 @@ function Homepage_content() {
   return (
     <div className='flex flex-col'>
       <div className='flex justify-around p-4'>
-        <div id="intro-video">
+        <div className="w-1/4 max-w-200px" id="intro-video">
           <iframe src="https://www.youtube.com/embed/frFlcZ1Xnno" id="video" allowFullScreen></iframe>
         </div>
         <div id="intro-info m-4">
@@ -47,6 +48,11 @@ function Homepage_content() {
             <Button label="Close" onClick={() => setDisclaimerOpen(false)}/>
           </Modal>
         </div>
+      </div>
+      <div>
+        <a href="GUM/GUM_Orientation/index.html" target="_blank">
+          <img className="w-1/4 max-w-200px" alt="Get up and move orientation course" src={GUM_slideshow} id="gum-orientation-logo"></img>
+        </a>
       </div>
     </div>
   );
