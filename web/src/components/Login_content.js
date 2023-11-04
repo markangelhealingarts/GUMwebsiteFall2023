@@ -24,7 +24,7 @@ const Login_content = () => {
   return (
     <div>
       <h1>Login</h1>
-      <form onSubmit={handleLogin}>
+      <form onSubmit={handleLogin} autoComplete="on">
         {error && <p className="error">{error}</p>}
         <input
           type="email"
@@ -33,6 +33,7 @@ const Login_content = () => {
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email"
           required
+          autoComplete="username"
         />
         <input
           type="password"
@@ -41,6 +42,7 @@ const Login_content = () => {
           onChange={(e) => setPassword(e.target.value)}
           placeholder="Password"
           required
+          autoComplete="current-password"
         />
         <button type="submit">Login</button>
       </form>
