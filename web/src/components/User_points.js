@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { auth, db } from '../firebase'; // Adjust the path according to your project structure
+import { auth, db } from '../firebase';
 import { doc, getDoc } from "firebase/firestore";
 
 const User_points = () => {
