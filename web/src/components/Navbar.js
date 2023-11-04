@@ -1,20 +1,28 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/newLogoNoText.png';
+import { useAuth } from '../AuthContext';
 
 const Navbar = () => {
+  const currentPath = window.location.pathname;
   const [isOpen, setIsOpen] = useState(false);
+  const { currentUser } = useAuth();
   const navItems = [
     {name: 'Home', path: '/'},
     {name: 'Start Moving', path: '/start_moving'},
     {name: 'Tidbits', path: '/tidbits'},
     {name: 'Healing Arts Site', path: 'https://www.markangelhealingarts.com/', external: true},
     {name: 'Privacy Policy', path: '/privacypolicy'},
-    {name: 'Contact', path: '/contact'},
-    {name: 'Login', path: '/login'}
+    {name: 'Contact', path: '/contact'}
   ];
-  const currentPath = window.location.pathname;
+  // Conditional logic to modify the navItems based on login status
+  if (currentUser) {
+    navItems.push({ name: currentUser.displayName || 'Profile', path: '/profile' });
+  } else {
+    navItems.push({ name: 'Login', path: '/login' });
+  }
+  
 
   return (
     <nav className="bg-blue-400 shadow-md">
