@@ -16,11 +16,13 @@ const Navbar = () => {
     {name: 'Privacy Policy', path: '/privacypolicy'},
     {name: 'Contact', path: '/contact'}
   ];
+  
   // Conditional logic to modify the navItems based on login status
   if (currentUser) {
     navItems.push({ name: currentUser.displayName || 'Profile', path: '/profile' });
   } else {
     navItems.push({ name: 'Login', path: '/login' });
+    navItems.push({ name: 'Sign Up', path: '/signup' });
   }
   
 

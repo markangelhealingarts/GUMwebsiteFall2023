@@ -1,7 +1,7 @@
 import React from 'react';
 import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { auth } from '../firebase'; // Adjust the path according to your project structure
+import { auth } from '../firebase';
 
 const Logout_button = () => {
   const navigate = useNavigate(); // Initialize the hook
