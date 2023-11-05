@@ -3,7 +3,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 
-const Login_content = () => {
+const LoginContent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -53,4 +53,4 @@ const Login_content = () => {
   );
 };
 
-export default Login_content;
+export default LoginContent;

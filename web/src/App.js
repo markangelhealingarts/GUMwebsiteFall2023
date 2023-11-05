@@ -1,11 +1,11 @@
 // src/App.js
 import React from 'react';
 import Layout from './components/Layout';
-import Homepage from './components/Hompage_content';
-import LoginPage from './components/Login_content';
-import SignupPage from './components/Signup_content';
+import Homepage from './components/HompageContent';
+import LoginPage from './components/LoginContent';
+import SignupPage from './components/SignupContent';
 import StartMoving from './components/StartMoving';
-import ProfilePage from './components/Profile_content';
+import ProfilePage from './components/ProfileContent';
 import PasswordReset from './components/PasswordReset';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';

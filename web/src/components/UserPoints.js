@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { auth, db } from '../firebase';
 import { doc, getDoc } from "firebase/firestore";
 
-const User_points = () => {
+const UserPoints = () => {
   const [userData, setUserData] = useState(null);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const User_points = () => {
   );
 };
 
-export default User_points;
+export default UserPoints;

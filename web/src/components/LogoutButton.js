@@ -3,7 +3,7 @@ import { signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebase';
 
-const Logout_button = () => {
+const LogoutButton = () => {
   const navigate = useNavigate(); // Initialize the hook
   const handleLogout = async () => {
     try {
@@ -19,4 +19,4 @@ const Logout_button = () => {
   );
 };
 
-export default Logout_button;
+export default LogoutButton;

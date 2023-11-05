@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import Button from './Button';
 import GUM_slideshow from '../assets/img/GUM_Orientation.png';
 
-function Homepage_content() {
+function HomepageContent() {
   const [isMoreInfoOpen, setMoreInfoOpen] = useState(false);
   const [isDisclaimerOpen, setDisclaimerOpen] = useState(false);
 
@@ -58,4 +58,4 @@ function Homepage_content() {
   );
 }
 
-export default Homepage_content;
+export default HomepageContent;
