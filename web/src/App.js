@@ -6,9 +6,10 @@ import LoginPage from './components/Login_content';
 import SignupPage from './components/Signup_content';
 import StartMoving from './components/StartMoving';
 import ProfilePage from './components/Profile_content';
+import PasswordReset from './components/PasswordReset';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
-import './App.css'; // Consider moving your main CSS here
+import './App.css';
 import 'tailwindcss/tailwind.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/profile" element={<ProfilePage />} />
+              <Route path="/password-reset" element={<PasswordReset />} />
             </Routes>
           </Layout>
         </div>

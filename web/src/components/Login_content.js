@@ -46,6 +46,9 @@ const Login_content = () => {
         />
         <button type="submit">Login</button>
       </form>
+      <p>
+        Forgot your password? <a href="/password-reset">Reset it here.</a>
+      </p>
     </div>
   );
 };
