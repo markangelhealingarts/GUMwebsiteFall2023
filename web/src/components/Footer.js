@@ -66,8 +66,8 @@ function Footer() {
 
     return (
       <div className='bg-blue-400 shadow-inner'>
-        <div className="navbar navbar-expand-lg navbar-inverse navbar-fixed-bottom flex justify-around items-center w-full" id="footer">
-          <div className="flex justify-between" id="videos-container">
+        <div className="navbar navbar-expand-lg navbar-inverse navbar-fixed-bottom flex flex-col lg:flex-row justify-around items-center w-full" id="footer">
+          <div className="flex flex-col sm:flex-row justify-between">
             {videoSections.map((section, idx) => (
               <div key={idx} className="video-section-container mr-2">
                 <b className="video-header">{section.header}</b>
@@ -83,7 +83,7 @@ function Footer() {
               </div>
             ))}
           </div>
-          <div id="app-icons" className="flex flex-col space-y-4">  {/* Add flex and spacing between icons */}
+          <div id="app-icons" className="flex flex-col space-y-2 m-2">  {/* Add flex and spacing between icons */}
             <a href="https://play.google.com/store/apps/details?id=com.gum.a499_android" target="_blank" rel="noopener noreferrer">
               <img src={playstorelogo} alt="Google play badge" className="w-40 h-12" />  {/* TailwindCSS classes for width and height */}
             </a>
@@ -91,7 +91,6 @@ function Footer() {
               <img src={applestorelogo} alt="Apple store badge" className="w-40 h-12" />  {/* TailwindCSS classes for width and height */}
             </a>
           </div>
-
         </div>
       </div>
     );
