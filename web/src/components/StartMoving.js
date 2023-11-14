@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import Button from './Button'
+import Button from './Button';
+import { useNavigate } from 'react-router-dom';
 
 function Start_Moving() {
+  const navigate = useNavigate(); // Initialize the hook
   const [isDisclaimerOpen, setDisclaimerOpen] = useState(false);
   
   const linkStyle = {
@@ -57,7 +59,7 @@ function Start_Moving() {
       </div>
 
       <div style={style4}>
-        <Button label="Easy" />
+        <Button label="Easy" onClick={() => navigate('/easy')}/>
 
         <Button label="Moderate" />
 

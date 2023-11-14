@@ -7,10 +7,12 @@ import SignupPage from './components/SignupContent';
 import StartMoving from './components/StartMoving';
 import ProfilePage from './components/ProfileContent';
 import PasswordReset from './components/PasswordReset';
+import Tidbits from './components/Tidbits';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
 import './App.css';
 import 'tailwindcss/tailwind.css';
+import GuidingVideoEasyContent from './components/GuidingVideoEasyContent';
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/password-reset" element={<PasswordReset />} />
+              <Route path="/tidbits" element={<Tidbits />} />
+              <Route path="/easy" element={<GuidingVideoEasyContent />} />
             </Routes>
           </Layout>
         </div>
