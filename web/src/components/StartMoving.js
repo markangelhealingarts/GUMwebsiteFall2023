@@ -61,9 +61,9 @@ function Start_Moving() {
       <div style={style4}>
         <Button label="Easy" onClick={() => navigate('/easy')}/>
 
-        <Button label="Moderate" />
+        <Button label="Moderate" onClick={() => navigate('/moderate')} />
 
-        <Button label="Vigorous" />
+        <Button label="Vigorous" onClick={() => navigate('/vigorous')} />
       </div>
 
       <div> 

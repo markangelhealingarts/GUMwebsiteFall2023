@@ -3,7 +3,7 @@ import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase';
 import GuidingVideo from './GuidingVideo';
 
-const GuidingVideoEasyContent = () => {
+const GuidingVideoContent = ({level}) => {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const GuidingVideoEasyContent = () => {
                         id: doc.id, // Accessing the document ID
                         ...doc.data() // Accessing the document data
                     }))
-                    .filter(video => video.Level === 1); // Filter videos with level 1
+                    .filter(video => video.Level === level); // Filter videos with level 1
                 setVideos(videoData);
             } catch (error) {
                 console.error("Error fetching data from Firestore:", error);
@@ -41,4 +41,4 @@ const GuidingVideoEasyContent = () => {
     );
 };
 
-export default GuidingVideoEasyContent;
+export default GuidingVideoContent;
