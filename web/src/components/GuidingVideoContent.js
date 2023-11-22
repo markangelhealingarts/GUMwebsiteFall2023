@@ -3,14 +3,14 @@ import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '../firebase';
 import GuidingVideo from './GuidingVideo';
 
-const GuidingVideoContent = ({level}) => {
+const GuidingVideoContent = ({level, videoCollection}) => {
     const [videos, setVideos] = useState([]);
 
     useEffect(() => {
         const fetchVideos = async () => {
             try {
                 const videoQuery = query(
-                    collection(db, "GuidingVideos"),
+                    collection(db, videoCollection),
                     orderBy("Session")
                 );
                 const querySnapshot = await getDocs(videoQuery);

@@ -60,9 +60,7 @@ function Start_Moving() {
 
       <div style={style4}>
         <Button label="Easy" onClick={() => navigate('/easy')}/>
-
         <Button label="Moderate" onClick={() => navigate('/moderate')} />
-
         <Button label="Vigorous" onClick={() => navigate('/vigorous')} />
       </div>
 
@@ -71,12 +69,9 @@ function Start_Moving() {
       </div>
 
       <div style={style4}>
-        <Button label="Easy" />
-
-        <Button label="Moderate" />
-
-        <Button label="Vigorous" />
-
+        <Button label="Easy" onClick={() => navigate('/easyTeaching')}/>
+        <Button label="Moderate" onClick={() => navigate('/moderateTeaching')} />
+        <Button label="Vigorous" onClick={() => navigate('/vigorousTeaching')} />
       </div>
       
     </div>

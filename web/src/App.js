@@ -28,9 +28,12 @@ function App() {
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/password-reset" element={<PasswordReset />} />
               <Route path="/tidbits" element={<Tidbits />} />
-              <Route path="/easy" element={<GuidingVideoContent level={1}/>} />
-              <Route path="/moderate" element={<GuidingVideoContent level={2}/>} />
-              <Route path="/vigorous" element={<GuidingVideoContent level={3}/>} />
+              <Route path="/easy" element={<GuidingVideoContent level={1} videoCollection={"GuidingVideos"}/>} />
+              <Route path="/moderate" element={<GuidingVideoContent level={2} videoCollection={"GuidingVideos"}/>} />
+              <Route path="/vigorous" element={<GuidingVideoContent level={3} videoCollection={"GuidingVideos"}/>} />
+              <Route path="/easyTeaching" element={<GuidingVideoContent level={1} videoCollection={"TeachingVideos"}/>} />
+              <Route path="/moderateTeaching" element={<GuidingVideoContent level={2} videoCollection={"TeachingVideos"}/>} />
+              <Route path="/vigorousTeaching" element={<GuidingVideoContent level={3} videoCollection={"TeachingVideos"}/>} />
             </Routes>
           </Layout>
         </div>
