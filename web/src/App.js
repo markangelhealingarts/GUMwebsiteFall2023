@@ -7,6 +7,8 @@ import SignupPage from './components/SignupContent';
 import StartMoving from './components/StartMoving';
 import ProfilePage from './components/ProfileContent';
 import PasswordReset from './components/PasswordReset';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import Contact from './components/Contact';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
 import './App.css';
@@ -25,6 +27,8 @@ function App() {
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/password-reset" element={<PasswordReset />} />
+              <Route path="/privacy_policy" element={<PrivacyPolicy />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </Layout>
         </div>

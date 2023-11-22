@@ -13,7 +13,7 @@ const Navbar = () => {
     {name: 'Start Moving', path: '/start_moving'},
     {name: 'Tidbits', path: '/tidbits'},
     {name: 'Healing Arts Site', path: 'https://www.markangelhealingarts.com/', external: true},
-    {name: 'Privacy Policy', path: '/privacypolicy'},
+    {name: 'Privacy Policy', path: '/privacy_policy'},
     {name: 'Contact', path: '/contact'}
   ];
   
