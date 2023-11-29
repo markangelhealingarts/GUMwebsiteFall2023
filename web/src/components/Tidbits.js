@@ -2,12 +2,6 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import Button from './Button';
 
-const headstyle = {
-  fontSize: '22px',
-  textAlign: 'center',
-};
-const style4 = { textAlign: 'center' };
-
 const tidbit = ["Whenever one is challenged by something in life, the challenge process itself is creating new neurological pathways and relationships in the brain, and shifting the thought patterns. That process of challenging one's habitual inertia is a large part of what allows real transformation of any kind in a person.", 
 "Strong evidence confirms that high amounts of sedentary behavior increase the risk for all-cause mortality including cardiovascular disease and type 2 diabetes. Moderate evidence indicates sedentary behavior is associated with endometrial, colon, and lung cancer. Limited evidence suggests sedentary behavior is associated with other cancer mortality rates and obesity. Strong evidence shows that the hazardous effects of sedentary behavior are more pronounced in physically inactive people (Katzmarzyk, et al., (2019).",
 "Over a thirteen week period, workers received a passive prompt every 45 minutes on their computer screen reminding them to stand and engage in non-purposeful activity throughout their workday. After thirteen weeks, the prompt was disabled, and participants were then free to voluntary engage the software. Results demonstrated that when employees were exposed to a passive prompt they were five times more likely to fully adhere to completing a movement break every hour of the workday (Cooley, et al., 2013).",
@@ -36,44 +30,30 @@ const tidbit = ["Whenever one is challenged by something in life, the challenge 
 "Qigong practice is known to help reduce stress, enhance the immune system and increase circulation, balance and strength.",
 "People who spend long periods of time (more than half an hour at a time) staring at a screen need to be informed about the dangers of eye fatigue and the 20-20-20 rule. The American Academy of Ophthalmology recommends the 20-20-20 rule: Every 20 minutes, shift the eyes to look at an object at least 20 feet away, for at least 20 seconds (hopkinsmedicine.org)."];
 
-function TidbitsBlog() {
-  const [isTidbitOpen, setTidbitOpen] = useState(false);
-  const [randomTidbit, setRandomTidbit] = useState(null);
+function Tidbits_Blog() {
+  
+    const getTidbit = () => {
+      const min = 0;
+      const max = tidbit.length - 1;
+      const randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
+      const selectedTidbit = tidbit[randomIndex];
+      setDisplayText(selectedTidbit);
+    };
 
-  const openTidbitModal = () => {
-    const min = 0;
-    const max = tidbit.length - 1;
-    const randomIndex = Math.floor(Math.random() * (max - min + 1)) + min;
-    const selectedTidbit = tidbit[randomIndex];
-    setRandomTidbit(selectedTidbit);
-    setTidbitOpen(true);
-  };
+    
+    const [displayText, setDisplayText] = useState('Click on the button below to learn an interesting fact about Physical Health!!!');
 
-  return (
-    <div className='move'>
-      <div id='tidbits'>
-        <h1 style={headstyle}>Tidbits Blog</h1><br></br>
-        <p style={style4}>Click on the button below to learn an interesting fact about Physical Health!!!!!</p>
-      </div>
-
-      <div style={style4}><br></br>
-        <Button label="Tidbit!" onClick={openTidbitModal} />
-
-        <Modal
-          isOpen={isTidbitOpen}
-          onRequestClose={() => setTidbitOpen(false)}
-          contentLabel="Tidbit"
-        >
-          <div style={style4}>
-            <h1 style={headstyle}>Tidbit!</h1><br></br>
-            {randomTidbit && <p >{randomTidbit}</p>}<br></br>
-            <Button label="Close" onClick={() => setTidbitOpen(false)} />
-          </div>
-          
-        </Modal>
-      </div>
-    </div>
-  );
+    return (
+        <div className='move'>
+            <div id='tidbits' class="text-center">
+                <h1 class="font-bold">Tidbits Blog</h1><br/>
+                <p >{displayText}</p> <br/>
+                    <Button label="Tidbit!" onClick={getTidbit}>Change Text</Button>
+            </div>
+        </div>
+    
+    );
+    
 }
 
-export default TidbitsBlog;
+export default Tidbits_Blog;

@@ -5,6 +5,7 @@ import Homepage from './components/HompageContent';
 import LoginPage from './components/LoginContent';
 import SignupPage from './components/SignupContent';
 import StartMoving from './components/StartMoving';
+import TidbitsPage from './components/Tidbits';
 import ProfilePage from './components/ProfileContent';
 import PasswordReset from './components/PasswordReset';
 import PrivacyPolicy from './components/PrivacyPolicyContent';
@@ -23,6 +24,7 @@ function App() {
             <Routes>
               <Route path="/" element={<Homepage />} />
               <Route path="/start_moving" element={<StartMoving />} />
+              <Route path="/tidbits_blog" element={<TidbitsPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/profile" element={<ProfilePage />} />
