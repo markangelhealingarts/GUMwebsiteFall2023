@@ -69,11 +69,11 @@ const Video = ({ video }) => {
 
     return (
         <div className="relative inline-block text-center w-full">
-            <div>
-                <div>{video.Title}</div>
-                <div className='w-full rounded-lg p-2' id={`youtube-player-${video.YtUrl}`}></div>
-                <div>{video.Desc}</div>
-            </div>
+          <div>
+            <div>{video.Title}</div>
+            <div className='w-full' id={`youtube-player-${video.YtUrl}`}></div>
+            <div>{video.Desc}</div>
+          </div>
         </div>
     );
 };
