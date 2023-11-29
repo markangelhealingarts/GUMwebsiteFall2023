@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { db } from '../firebase';
 import { doc, updateDoc, increment } from 'firebase/firestore';
 import { useAuth } from '../AuthContext';
@@ -6,6 +6,28 @@ import { useAuth } from '../AuthContext';
 const Video = ({ video }) => {
     const [player, setPlayer] = useState(null);
     const { currentUser } = useAuth();
+
+    const addPointToUserProfile = useCallback(async () => {
+      console.log("Adding points");
+    
+      // Check if a user is logged in
+      if (currentUser) {
+        // Construct the reference to the user's document in Firestore
+        const userRef = doc(db, 'Users', currentUser.uid);
+    
+        try {
+          // Increment the points field by 1
+          await updateDoc(userRef, {
+            points: increment(1)
+          });
+          console.log('Point added to user profile');
+        } catch (error) {
+          console.error('Error updating user points:', error);
+        }
+      } else {
+        console.log('No user logged in');
+      }
+    }, [currentUser]);
 
     useEffect(() => {
         // Function to create the YouTube player
@@ -43,29 +65,7 @@ const Video = ({ video }) => {
             setPlayer(null);
           }
         };
-    }, [player, video]);
-
-    const addPointToUserProfile = async () => {
-      console.log("Adding points");
-    
-      // Check if a user is logged in
-      if (currentUser) {
-        // Construct the reference to the user's document in Firestore
-        const userRef = doc(db, 'Users', currentUser.uid);
-    
-        try {
-          // Increment the points field by 1
-          await updateDoc(userRef, {
-            points: increment(1)
-          });
-          console.log('Point added to user profile');
-        } catch (error) {
-          console.error('Error updating user points:', error);
-        }
-      } else {
-        console.log('No user logged in');
-      }
-    };
+    }, [player, video, addPointToUserProfile]);
 
     return (
         <div className="relative inline-block text-center w-full">

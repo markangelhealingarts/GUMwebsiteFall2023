@@ -5,7 +5,6 @@ import logo from '../assets/img/newLogoNoText.png';
 import { useAuth } from '../AuthContext';
 
 const Navbar = () => {
-  const currentPath = window.location.pathname;
   const [isOpen, setIsOpen] = useState(false);
   const { currentUser } = useAuth();
   const navItems = [
@@ -30,7 +29,7 @@ const Navbar = () => {
     <nav className="bg-blue-400 shadow-md">
       <div className="px-4 py-2 flex justify-between items-center w-full">
         <div className="flex justify-between items-center text-2xl">
-          <img src={logo} alt="Your Logo" className="h-12" />
+          <img src={logo} alt="Get up and Move logo" className="h-12" />
           Get Up and Move
         </div>
         
@@ -77,7 +76,7 @@ const Navbar = () => {
             <div className="bg-blue-400 w-1/2 h-full absolute top-0 right-0 overflow-y-auto">
               <ul className="text-right mt-4">
                 <li className="navi p-2">
-                  <button onClick={() => setIsOpen(false)}>Close</button>
+                  <button onClick={() => setIsOpen(false)}>Close Menu</button>
                 </li>
                 {navItems.map(item => {
                   if (item.external) {

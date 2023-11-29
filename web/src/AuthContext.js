@@ -11,10 +11,10 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const navigate = useNavigate();
-  let currentTimer = null;
   const [currentTimerSession, setCurrentTimerSession] = useState(0);
 
   useEffect(() => {
+    let currentTimer = null;
     const unsubscribe = auth.onAuthStateChanged(async (user) => {
       setCurrentUser(user);
       if (user) {

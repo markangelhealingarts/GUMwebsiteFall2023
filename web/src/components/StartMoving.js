@@ -13,8 +13,6 @@ function Start_Moving() {
     fontWeight: 'bold'
   };
 
-  const style3={color:'white'}
-
   const headstyle={
     fontSize: '22px',
     textAlign: 'center',

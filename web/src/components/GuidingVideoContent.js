@@ -27,7 +27,7 @@ const GuidingVideoContent = ({level, videoCollection}) => {
         };
 
         fetchVideos();
-    }, []);
+    }, [level, videoCollection]);
 
     return (
         <div className="flex flex-col items-center justify-center w-full">

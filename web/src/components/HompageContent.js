@@ -48,6 +48,7 @@ function HomepageContent() {
       </div>
       <div className='flex flex-row justify-center p-2'>
         <iframe
+          title="YouTube video player"
           src="https://www.youtube.com/embed/frFlcZ1Xnno"
           allowFullScreen
           className="block w-full aspect-video min-w-md max-w-2xl rounded-lg"
