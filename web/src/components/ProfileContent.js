@@ -6,7 +6,7 @@ import UserSchedule from './UserSchedule';
 
 const ProfileContent = () => {
   return (
-    <div className="">
+    <div className="flex flex-col items-center">
       <UserPoints />
       <UserLevelSelect />
       <UserSchedule />

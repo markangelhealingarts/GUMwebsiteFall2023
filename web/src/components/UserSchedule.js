@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useAuth } from '../AuthContext';
 import { db } from '../firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
+import Button from './Button';
 
 const UserSchedule = () => {
   const { currentUser } = useAuth();
@@ -81,7 +82,8 @@ const UserSchedule = () => {
   };
 
   return (
-    <div>
+    <div className='flex flex-col items-center p-2'>
+      <h1>Activity Schedule</h1>
       {schedule.map((time, index) => (
         <div key={index}>
           <label>Session {index + 1}: </label>
@@ -92,7 +94,7 @@ const UserSchedule = () => {
           />
         </div>
       ))}
-      <button onClick={saveSchedule}>Save Schedule</button>
+      <Button label={'Save Schedule'} onClick={saveSchedule} additionalClasses='w-full'></Button>
     </div>
   );
 };

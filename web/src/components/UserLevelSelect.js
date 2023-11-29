@@ -30,11 +30,14 @@ const UserLevelSelect = () => {
   };
 
   return (
-    <select value={userLevel} onChange={handleLevelChange}>
-      <option value="1">Easy</option>
-      <option value="2">Moderate</option>
-      <option value="3">Vigorous</option>
-    </select>
+    <div className='p-2'>
+      Activity Level: 
+      <select value={userLevel} onChange={handleLevelChange}>
+        <option value="1">Easy</option>
+        <option value="2">Moderate</option>
+        <option value="3">Vigorous</option>
+      </select>
+    </div>
   );
 };
 
