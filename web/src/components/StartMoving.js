@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import Button from './Button'
+import Button from './Button';
+import { useNavigate } from 'react-router-dom';
 
 function Start_Moving() {
+  const navigate = useNavigate(); // Initialize the hook
   const [isDisclaimerOpen, setDisclaimerOpen] = useState(false);
 
   return(
@@ -42,11 +44,9 @@ function Start_Moving() {
       </div>
 
       <div class="text-center">
-        <Button label="Easy" />
-
-        <Button label="Moderate" />
-
-        <Button label="Vigorous" />
+        <Button label="Easy" onClick={() => navigate('/easy')}/>
+        <Button label="Moderate" onClick={() => navigate('/moderate')} />
+        <Button label="Vigorous" onClick={() => navigate('/vigorous')} />
       </div>
 
       <div> 
@@ -54,12 +54,9 @@ function Start_Moving() {
       </div>
 
       <div class="text-center">
-        <Button label="Easy" />
-
-        <Button label="Moderate" />
-
-        <Button label="Vigorous" />
-
+        <Button label="Easy" onClick={() => navigate('/easyTeaching')}/>
+        <Button label="Moderate" onClick={() => navigate('/moderateTeaching')} />
+        <Button label="Vigorous" onClick={() => navigate('/vigorousTeaching')} />
       </div>
       
     </div>

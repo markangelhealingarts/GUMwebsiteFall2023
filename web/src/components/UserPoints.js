@@ -23,7 +23,9 @@ const UserPoints = () => {
   }, []);
 
   return (
-    <h1>Your Points: {userData ? userData.points : 0}</h1>
+    <div className='p-2'>
+      <h1>Your Points: {userData ? userData.points : 0}</h1>
+    </div>
   );
 };
 
