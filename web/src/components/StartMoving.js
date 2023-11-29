@@ -6,28 +6,15 @@ import { useNavigate } from 'react-router-dom';
 function Start_Moving() {
   const navigate = useNavigate(); // Initialize the hook
   const [isDisclaimerOpen, setDisclaimerOpen] = useState(false);
-  
-  const linkStyle = {
-    color: 'green',  
-    textDecoration: 'underline', 
-    fontWeight: 'bold'
-  };
-
-  const headstyle={
-    fontSize: '22px',
-    textAlign: 'center',
-  }
-
-   const style4={textAlign:'center'}
 
   return(
     <div className='move'>
       <div id="moving">
-        <h1 id="moving_header" style= {headstyle} >Start Moving!</h1>
+        <h1 id="moving_header" class="text-center" >Start Moving!</h1>
         <br/>
-        <div id="move m-4" style={style4}>Each of the following activities is demonstrated at three levels of intensity based on a participants general physical capabilities: Easy, Moderate, Vigorous.
+        <div id="move m-4" class="text-center">Each of the following activities is demonstrated at three levels of intensity based on a participants general physical capabilities: Easy, Moderate, Vigorous.
         <br/>
-        Please go to <a href="https://getupandmove.net/pages/how_to.html" target="_blank" rel="noopener noreferrer" style={linkStyle}>How to Get Up and Move</a> for a brief overview of this program.
+        Please go to <a href="https://getupandmove.net/pages/how_to.html" target="_blank" rel="noopener noreferrer" class= "underline text-green-700">How to Get Up and Move</a> for a brief overview of this program.
         <br/><br/>
         <Button label="Disclaimer" onClick={() => setDisclaimerOpen(true)}/>
 
@@ -53,20 +40,20 @@ function Start_Moving() {
       </div>
 
       <div> 
-        <br/> <h1 style={headstyle}>Guiding Videos</h1>
+        <br/> <h1 class="text-center">Guiding Videos</h1>
       </div>
 
-      <div style={style4}>
+      <div class="text-center">
         <Button label="Easy" onClick={() => navigate('/easy')}/>
         <Button label="Moderate" onClick={() => navigate('/moderate')} />
         <Button label="Vigorous" onClick={() => navigate('/vigorous')} />
       </div>
 
       <div> 
-        <br/> <h1 style={headstyle}>Teaching Videos</h1>
+        <br/> <h1 class="text-center">Teaching Videos</h1>
       </div>
 
-      <div style={style4}>
+      <div class="text-center">
         <Button label="Easy" onClick={() => navigate('/easyTeaching')}/>
         <Button label="Moderate" onClick={() => navigate('/moderateTeaching')} />
         <Button label="Vigorous" onClick={() => navigate('/vigorousTeaching')} />

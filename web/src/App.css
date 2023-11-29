@@ -2,10 +2,3 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.box-container {
-    display: inline-block;
-    padding: 10px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    background-color: rgb(115, 163, 251);
-}
