@@ -30,7 +30,7 @@ function App() {
               <Route path="/signup" element={<SignupPage />} />
               <Route path="/profile" element={<ProfilePage />} />
               <Route path="/password-reset" element={<PasswordReset />} />
-              <Route path="/tidbits" element={<Tidbits />} />
+              <Route path="/tidbits" element={<TidbitsPage />} />
               <Route path="/easy" element={<GuidingVideoContent level={1} videoCollection={"GuidingVideos"}/>} />
               <Route path="/moderate" element={<GuidingVideoContent level={2} videoCollection={"GuidingVideos"}/>} />
               <Route path="/vigorous" element={<GuidingVideoContent level={3} videoCollection={"GuidingVideos"}/>} />
