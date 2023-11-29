@@ -23,6 +23,14 @@ const SignupContent = () => {
       await setDoc(doc(db, "Users", user.uid), {
         username: username,
         points: 0,
+        "timers": [
+          "09:00",
+          "10:00",
+          "11:00",
+          "14:00",
+          "15:00",
+          "16:00"
+        ]
       });
 
       // Handle successful signup (e.g., redirect to a protected page)

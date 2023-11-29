@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { collection, getDocs, query, orderBy, where } from 'firebase/firestore';
 import { db } from '../firebase';
 import GuidingVideo from './GuidingVideo';
 
@@ -11,6 +11,7 @@ const GuidingVideoContent = ({level, videoCollection}) => {
             try {
                 const videoQuery = query(
                     collection(db, videoCollection),
+                    where("Level", "==", level),
                     orderBy("Session")
                 );
                 const querySnapshot = await getDocs(videoQuery);
@@ -19,7 +20,6 @@ const GuidingVideoContent = ({level, videoCollection}) => {
                         id: doc.id, // Accessing the document ID
                         ...doc.data() // Accessing the document data
                     }))
-                    .filter(video => video.Level === level); // Filter videos with level 1
                 setVideos(videoData);
             } catch (error) {
                 console.error("Error fetching data from Firestore:", error);

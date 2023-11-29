@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import Layout from './components/Layout';
 import Homepage from './components/HompageContent';
@@ -13,6 +12,7 @@ import { AuthProvider } from './AuthContext';
 import './App.css';
 import 'tailwindcss/tailwind.css';
 import GuidingVideoContent from './components/GuidingVideoContent';
+import VideoContent from './components/VideoContent'
 
 function App() {
   return (
@@ -34,6 +34,7 @@ function App() {
               <Route path="/easyTeaching" element={<GuidingVideoContent level={1} videoCollection={"TeachingVideos"}/>} />
               <Route path="/moderateTeaching" element={<GuidingVideoContent level={2} videoCollection={"TeachingVideos"}/>} />
               <Route path="/vigorousTeaching" element={<GuidingVideoContent level={3} videoCollection={"TeachingVideos"}/>} />
+              <Route path="/video/:videoLevel/:videoSession" element={<VideoContent />} />
             </Routes>
           </Layout>
         </div>
