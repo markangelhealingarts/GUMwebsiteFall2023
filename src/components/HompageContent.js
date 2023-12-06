@@ -54,11 +54,6 @@ function HomepageContent() {
           className="block w-full aspect-video min-w-md max-w-2xl rounded-lg"
         ></iframe>
       </div>
-      <div className='flex flex-row justify-center p-2'>
-        <a href="GUM/GUM_Orientation/index.html" target="_blank">
-          <img alt="Get up and move orientation course" src={GUM_slideshow} className='w-full min-w-md max-w-2xl aspect-video rounded-lg'></img>
-        </a>
-      </div>
     </div>
   );
 }

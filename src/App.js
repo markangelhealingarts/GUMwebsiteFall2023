@@ -24,6 +24,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Homepage />} />
+              <Route path="/GUMwebsiteFall2023" element={<Homepage />} />
               <Route path="/start_moving" element={<StartMoving />} />
               <Route path="/tidbits_blog" element={<TidbitsPage />} />
               <Route path="/login" element={<LoginPage />} />
