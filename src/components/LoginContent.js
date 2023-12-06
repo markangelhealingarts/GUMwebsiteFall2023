@@ -17,38 +17,43 @@ const LoginContent = () => {
       navigate('/');
     } catch (error) {
       setError(error.message);
-      // Handle errors (e.g., incorrect credentials)
     }
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleLogin} autoComplete="on">
-        {error && <p className="error">{error}</p>}
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
-          required
-          autoComplete="username"
-        />
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          required
-          autoComplete="current-password"
-        />
-        <button type="submit">Login</button>
-      </form>
-      <p>
-        Forgot your password? <a href="/password-reset">Reset it here.</a>
-      </p>
+    <div className="flex flex-col items-center justify-center bg-gray-100">
+      <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
+        <h1 className="text-2xl font-bold text-center mb-4">Login</h1>
+        <form onSubmit={handleLogin} autoComplete="on" className="space-y-4">
+          {error && <p className="text-red-500 text-sm">{error}</p>}
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+            autoComplete="username"
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <input
+            type="password"
+            name="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
+            required
+            autoComplete="current-password"
+            className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+          <button type="submit" className="w-full bg-blue-400 hover:bg-blue-500 text-white font-bold p-2 rounded-lg m-1">
+            Login
+          </button>
+        </form>
+        <p className="mt-4 text-center text-sm">
+          Forgot your password? <a href="/password-reset" className="text-blue-600 hover:underline">Reset it here.</a>
+        </p>
+      </div>
     </div>
   );
 };
