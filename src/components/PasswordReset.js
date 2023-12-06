@@ -33,7 +33,7 @@ const PasswordReset = () => {
             required
             className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <button type="submit" className="w-full bg-blue-400 hover:bg-blue-500 text-white font-bold p-2 rounded-lg m-1">
+          <button type="submit" className="w-full bg-blue-400 hover:bg-blue-500 text-white font-bold p-2 rounded-lg">
             Reset Password
           </button>
         </form>
