@@ -9,7 +9,7 @@ import ProfilePage from './components/ProfileContent';
 import PasswordReset from './components/PasswordReset';
 import PrivacyPolicy from './components/PrivacyPolicyContent';
 import Contact from './components/ContactContent';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
 import './App.css';
 import 'tailwindcss/tailwind.css';
