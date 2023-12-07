@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/GUMwebsiteFall2023/static/css/main.4ed94cdf.css",
-    "main.js": "/GUMwebsiteFall2023/static/js/main.517d4be7.js",
-    "static/js/787.d1d4a2c2.chunk.js": "/GUMwebsiteFall2023/static/js/787.d1d4a2c2.chunk.js",
-    "static/media/GUM_Orientation.png": "/GUMwebsiteFall2023/static/media/GUM_Orientation.2f390ca1cc3cdc27d721.png",
-    "static/media/venmo2.png": "/GUMwebsiteFall2023/static/media/venmo2.317951d9209ff3601496.png",
-    "static/media/paypal2.png": "/GUMwebsiteFall2023/static/media/paypal2.18fb2bb71b3f4636f4fd.png",
-    "static/media/google-play-badge-logo-png-transparent.png": "/GUMwebsiteFall2023/static/media/google-play-badge-logo-png-transparent.6a0c5cef7b7fe0cbfbec.png",
-    "static/media/twitter.png": "/GUMwebsiteFall2023/static/media/twitter.7ba0dbb133ab0315e521.png",
-    "static/media/newLogoNoText.png": "/GUMwebsiteFall2023/static/media/newLogoNoText.2e57a282f49feabc515b.png",
-    "static/media/instagram.png": "/GUMwebsiteFall2023/static/media/instagram.5ffd8c3611e860949af3.png",
-    "static/media/facebook.png": "/GUMwebsiteFall2023/static/media/facebook.8d13294db277b93f38a7.png",
-    "index.html": "/GUMwebsiteFall2023/index.html",
-    "main.4ed94cdf.css.map": "/GUMwebsiteFall2023/static/css/main.4ed94cdf.css.map",
-    "main.517d4be7.js.map": "/GUMwebsiteFall2023/static/js/main.517d4be7.js.map",
-    "787.d1d4a2c2.chunk.js.map": "/GUMwebsiteFall2023/static/js/787.d1d4a2c2.chunk.js.map"
+    "main.css": "/static/css/main.4ed94cdf.css",
+    "main.js": "/static/js/main.c73f3486.js",
+    "static/js/787.d1d4a2c2.chunk.js": "/static/js/787.d1d4a2c2.chunk.js",
+    "static/media/GUM_Orientation.png": "/static/media/GUM_Orientation.2f390ca1cc3cdc27d721.png",
+    "static/media/venmo2.png": "/static/media/venmo2.317951d9209ff3601496.png",
+    "static/media/paypal2.png": "/static/media/paypal2.18fb2bb71b3f4636f4fd.png",
+    "static/media/google-play-badge-logo-png-transparent.png": "/static/media/google-play-badge-logo-png-transparent.6a0c5cef7b7fe0cbfbec.png",
+    "static/media/twitter.png": "/static/media/twitter.7ba0dbb133ab0315e521.png",
+    "static/media/newLogoNoText.png": "/static/media/newLogoNoText.2e57a282f49feabc515b.png",
+    "static/media/instagram.png": "/static/media/instagram.5ffd8c3611e860949af3.png",
+    "static/media/facebook.png": "/static/media/facebook.8d13294db277b93f38a7.png",
+    "index.html": "/index.html",
+    "main.4ed94cdf.css.map": "/static/css/main.4ed94cdf.css.map",
+    "main.c73f3486.js.map": "/static/js/main.c73f3486.js.map",
+    "787.d1d4a2c2.chunk.js.map": "/static/js/787.d1d4a2c2.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.4ed94cdf.css",
-    "static/js/main.517d4be7.js"
+    "static/js/main.c73f3486.js"
   ]
 }
