@@ -18,9 +18,17 @@ function Start_Moving() {
           <br/><br/>
           <Button label="Disclaimer" onClick={() => setDisclaimerOpen(true)}/>
         </div>
-    
-        <Modal isOpen={isDisclaimerOpen} onRequestClose={() => setDisclaimerOpen(false)} contentLabel="Disclaimer">
-          <h2>Fitness and Exercise Disclaimer</h2>
+
+        <Modal 
+          isOpen={isDisclaimerOpen} 
+          onRequestClose={() => setDisclaimerOpen(false)} 
+          contentLabel="Disclaimer"
+          className="fixed inset-0 flex items-center justify-center p-4"
+        >
+          <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md max-h-[80vh] overflow-y-auto">
+            <h2 className="text-xl font-bold mb-4">Disclaimer</h2>
+            <div className="modal-body text-sm">
+              <h2>Fitness and Exercise Disclaimer</h2>
               <div className="modal-body">
                 The purpose of this DISCLAIMER AND NOTICE is to make you aware of the potential risks connected with activity in any exercise, physical fitness or training program. It is also to help you make an informed decision as to whether or not you should participate in Get Up and Move and the activities associated with it. 
                 <br/><br/>
@@ -34,7 +42,9 @@ function Start_Moving() {
                 <br/><br/>
                 <b>USE THIS PROGRAM AND ALL INFORMATION CONTAINED WITHIN IT AT YOUR OWN RISK</b>
               </div>
-              <Button label="Close" onClick={() => setDisclaimerOpen(false)}/>
+            </div>
+            <Button label="Close" onClick={() => setDisclaimerOpen(false)}/>
+          </div>
         </Modal>
       </div>
 
