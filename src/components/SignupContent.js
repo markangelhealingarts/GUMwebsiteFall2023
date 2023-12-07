@@ -22,7 +22,7 @@ const SignupContent = () => {
       // Initialize user variables in Firestore
       await setDoc(doc(db, "Users", user.uid), {
         username: username,
-        level: 0,
+        level: 1,
         points: 0,
         timers: [
           "09:00",
