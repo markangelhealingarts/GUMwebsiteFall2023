@@ -84,7 +84,7 @@ const UserSchedule = () => {
   };
 
   return (
-    <div className='flex flex-col items-center p-2 bg-gray-200'>
+    <div className='flex flex-col items-center p-2 bg-gray-200 rounded-lg'>
       <h1>Activity Schedule</h1>
       <p>Times must be one after another and between 1 to 3 hours apart</p>
       <div>
