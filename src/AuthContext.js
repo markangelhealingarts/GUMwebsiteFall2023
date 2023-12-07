@@ -23,11 +23,31 @@ export const AuthProvider = ({ children }) => {
         if (userDoc.exists()) {
           const userData = userDoc.data();
           const userLevel = userData.level;
-          const nextTimerTime = userData.timers[currentTimerSession];
+
+          // Get the current time
+          const now = new Date();
+          const currentTime = now.getHours() * 60 + now.getMinutes();
+
+          // Find the next timer time
+          let nextTimerTime = userData.timers.find(time => {
+            const [hours, minutes] = time.split(':').map(Number);
+            return (hours * 60 + minutes) > currentTime;
+          });
+
+          // If no timer is found, use the first timer of the next day
+          if (!nextTimerTime) {
+            nextTimerTime = userData.timers[0];
+            setCurrentTimerSession(0); // Reset the timer session
+          } else {
+            // Set the current timer session to the found timer
+            setCurrentTimerSession(userData.timers.indexOf(nextTimerTime));
+          }
+
+          // Start the timer
           if (nextTimerTime) {
             currentTimer.current = new Timer(nextTimerTime, () => {
               console.log("Timer expired!")
-              setCurrentTimerSession((prev) => (prev >= 5) ?  0 : prev + 1); // Update the session for the next timer
+              setCurrentTimerSession((prev) => (prev >= userData.timers.length - 1) ? 0 : prev + 1);
               alert(`Hey ${userData.username}, it's time to Get Up and Move!`);
               navigate(`/video/${userLevel}/${currentTimerSession + 1}`);
             });

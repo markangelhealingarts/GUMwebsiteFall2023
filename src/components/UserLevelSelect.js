@@ -1,17 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../AuthContext';
 import { db } from '../firebase';
-import { doc, updateDoc } from 'firebase/firestore';
+import { doc, getDoc, updateDoc } from 'firebase/firestore';
 
 const UserLevelSelect = () => {
   const { currentUser } = useAuth();
   const [userLevel, setUserLevel] = useState('');
 
   useEffect(() => {
-    // Fetch the user's level from their profile and set it in state
-    if (currentUser && currentUser.level) {
-      setUserLevel(currentUser.level.toString());
-    }
+    // Fetch the user's level from Firestore and set it in state
+    const fetchUserLevel = async () => {
+      if (currentUser) {
+        const userRef = doc(db, 'Users', currentUser.uid);
+        try {
+          const userDoc = await getDoc(userRef);
+          if (userDoc.exists()) {
+            const userData = userDoc.data();
+            setUserLevel(userData.level.toString());
+          }
+        } catch (error) {
+          console.error('Error fetching user level:', error);
+        }
+      }
+    };
+
+    fetchUserLevel();
   }, [currentUser]);
 
   const handleLevelChange = async (event) => {

@@ -10,7 +10,7 @@ import PasswordReset from './components/PasswordReset';
 import PrivacyPolicy from './components/PrivacyPolicyContent';
 import Contact from './components/ContactContent';
 import Tutorial from './components/Tutorial';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
 import './App.css';
 import 'tailwindcss/tailwind.css';
@@ -25,6 +25,7 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Homepage />} />
+              <Route path="/GUMwebsiteFall2023" element={<Homepage />} />
               <Route path="/start_moving" element={<StartMoving />} />
               <Route path="/tidbits_blog" element={<TidbitsPage />} />
               <Route path="/login" element={<LoginPage />} />
