@@ -9,6 +9,7 @@ import ProfilePage from './components/ProfileContent';
 import PasswordReset from './components/PasswordReset';
 import PrivacyPolicy from './components/PrivacyPolicyContent';
 import Contact from './components/ContactContent';
+import Tutorial from './components/Tutorial';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
 import './App.css';
@@ -41,6 +42,7 @@ function App() {
               <Route path="/video/:videoLevel/:videoSession" element={<VideoContent />} />
               <Route path="/privacy_policy" element={<PrivacyPolicy />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/tutorial" element={<Tutorial />}/>
             </Routes>
           </Layout>
         </div>
