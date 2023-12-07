@@ -13,11 +13,10 @@ function Start_Moving() {
         <h1 id="moving_header" class="text-center" >Start Moving!</h1>
         <br/>
         <div id="move m-4" class="text-center">Each of the following activities is demonstrated at three levels of intensity based on a participants general physical capabilities: Easy, Moderate, Vigorous.
-        <br/>
-        Please go to <a href="https://getupandmove.net/pages/how_to.html" target="_blank" rel="noopener noreferrer" class= "underline text-green-700">How to Get Up and Move</a> for a brief overview of this program.
-        <br/><br/>
-        <Button label="Disclaimer" onClick={() => setDisclaimerOpen(true)}/>
-
+          <br/>
+          Please go to <button onClick={() => navigate('/tutorial')} className="underline text-green-700">How to Get Up and Move</button> for a brief overview of this program.
+          <br/><br/>
+          <Button label="Disclaimer" onClick={() => setDisclaimerOpen(true)}/>
         </div>
     
         <Modal isOpen={isDisclaimerOpen} onRequestClose={() => setDisclaimerOpen(false)} contentLabel="Disclaimer">
