@@ -75,26 +75,31 @@ const UserSchedule = () => {
       try {
         await updateDoc(userRef, { timers: schedule });
         console.log('Schedule updated');
+        alert('Schedule updated');
       } catch (error) {
         console.error('Error updating schedule:', error);
+        alert('Error updating schedule');
       }
     }
   };
 
   return (
-    <div className='flex flex-col items-center p-2'>
+    <div className='flex flex-col items-center p-2 bg-gray-200'>
       <h1>Activity Schedule</h1>
-      {schedule.map((time, index) => (
-        <div key={index}>
-          <label>Session {index + 1}: </label>
-          <input
-            type="time"
-            value={time}
-            onChange={(e) => handleTimeChange(index, e.target.value)}
-          />
-        </div>
-      ))}
-      <Button label={'Save Schedule'} onClick={saveSchedule} additionalClasses='w-full'></Button>
+      <p>Times must be one after another and between 1 to 3 hours apart</p>
+      <div>
+        {schedule.map((time, index) => (
+          <div key={index}>
+            <label>Session {index + 1}: </label>
+            <input
+              type="time"
+              value={time}
+              onChange={(e) => handleTimeChange(index, e.target.value)}
+            />
+          </div>
+        ))}
+        <Button label={'Save Schedule'} onClick={saveSchedule} additionalClasses='w-full'></Button>
+      </div>
     </div>
   );
 };

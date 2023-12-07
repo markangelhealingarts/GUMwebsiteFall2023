@@ -34,7 +34,10 @@ const UserPoints = () => {
   }
 
   return (
-    <div className='p-2'>
+    <div className='p-2 items-center'>
+      <p className='text-lg'>
+        Hello, {userData.username}
+      </p>
       <h1>Your Points: {userData ? userData.points : 'Not available'}</h1>
     </div>
   );
