@@ -13,7 +13,6 @@ function Tidbits_Blog() {
         const tidbitsSnapshot = await getDocs(tidbitsCollection);
         const tidbitsList = tidbitsSnapshot.docs.map(doc => doc.data().Tidbit);
         setTidbits(tidbitsList);
-        console.log('Tidbit from useEffect');
       };
   
       fetchTidbits();

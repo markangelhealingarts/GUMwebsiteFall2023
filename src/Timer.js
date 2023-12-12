@@ -3,7 +3,6 @@ export default class Timer {
     this.targetTime = targetTime;
     this.onExpire = onExpire;
     this.timerId = null;
-    console.log("Setting Timer");
   }
 
   
@@ -30,7 +29,6 @@ export default class Timer {
 
     this.stop(); // Stop any existing timer
     this.timerId = setTimeout(this.onExpire, timeUntilExpiration);
-    console.log("Timer set." + timeUntilExpiration);
   }
 
   stop() {

@@ -46,9 +46,8 @@ export const AuthProvider = ({ children }) => {
           // Start the timer
           if (nextTimerTime) {
             currentTimer.current = new Timer(nextTimerTime, () => {
-              console.log("Timer expired!")
               setCurrentTimerSession((prev) => (prev >= userData.timers.length - 1) ? 0 : prev + 1);
-              alert(`Hey ${userData.username}, it's time to Get Up and Move!`);
+              alert(`Hey ${auth.currentUser.displayName}, it's time to Get Up and Move!`);
               navigate(`/video/${userLevel}/${currentTimerSession + 1}`);
             });
             currentTimer.current.start();

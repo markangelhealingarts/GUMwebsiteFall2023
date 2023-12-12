@@ -37,7 +37,7 @@ const VideoContent = () => {
 
   return (
     <div>
-      <Video video={video}/>
+      <Video video={video} videoLevel={videoLevel}/>
     </div>
   );
 };

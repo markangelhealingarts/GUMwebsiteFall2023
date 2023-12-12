@@ -76,7 +76,6 @@ const UserSchedule = () => {
       const userRef = doc(db, 'Users', currentUser.uid);
       try {
         await updateDoc(userRef, { timers: schedule });
-        console.log('Schedule updated');
         // lazy fix, timer isnt reset after this saves, so to force timer to re read new schedule by loading home page. 
         // doing '/profile' doesnt work due to how react works
         navigate('/');

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore"; 
 import { auth, db } from '../firebase';
 import { useNavigate } from 'react-router-dom';
@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 const SignupContent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [username, setUsername] = useState('');
+  const [displayName, setDisplayName] = useState('');
   const [error, setError] = useState('');
   const navigate = useNavigate(); // Initialize the hook
 
@@ -18,10 +18,14 @@ const SignupContent = () => {
       // Create user with email and password
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
+      
+      // Update the user's profile with displayName
+      await updateProfile(user, {
+        displayName: displayName
+      });
 
       // Initialize user variables in Firestore
       await setDoc(doc(db, "Users", user.uid), {
-        username: username,
         level: 1,
         points: 0,
         timers: [
@@ -51,9 +55,9 @@ const SignupContent = () => {
           <input
             type="text"
             name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Username"
+            value={displayName}
+            onChange={(e) => setDisplayName(e.target.value)}
+            placeholder="Display Name"
             required
             className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />

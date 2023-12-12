@@ -16,8 +16,8 @@ function Tutorial() {
     const toggleDropdown6 = () => sixIsOpen(!isOpen6);
     return(
         <div>
-            <h1 class=" text-center , font-bold">How to Get Up and Move</h1>
-            <h2 class=" text-center , font-semibold">by Mark Angel</h2>
+            <h1 className=" text-center font-bold">How to Get Up and Move</h1>
+            <h2 className=" text-center font-semibold">by Mark Angel</h2>
             <div className="relative inline-block text-center w-full">
                 <Button label={'Step 1: Recognize that regular movement is essential to your health'} onClick={toggleDropdown1} additionalClasses='w-full'></Button>
                 {isOpen1 && (

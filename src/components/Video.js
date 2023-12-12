@@ -3,12 +3,11 @@ import { db } from '../firebase';
 import { doc, updateDoc, increment } from 'firebase/firestore';
 import { useAuth } from '../AuthContext';
 
-const Video = ({ video }) => {
+const Video = ({ video, videoLevel }) => {
     const [player, setPlayer] = useState(null);
     const { currentUser } = useAuth();
 
     const addPointToUserProfile = useCallback(async () => {
-      console.log("Adding points");
     
       // Check if a user is logged in
       if (currentUser) {
@@ -18,16 +17,15 @@ const Video = ({ video }) => {
         try {
           // Increment the points field by 1
           await updateDoc(userRef, {
-            points: increment(currentUser.level)
+            points: increment(videoLevel)
           });
-          console.log('Point added to user profile');
         } catch (error) {
           console.error('Error updating user points:', error);
         }
       } else {
         console.log('No user logged in');
       }
-    }, [currentUser]);
+    }, [currentUser, videoLevel]);
 
     useEffect(() => {
         // Function to create the YouTube player

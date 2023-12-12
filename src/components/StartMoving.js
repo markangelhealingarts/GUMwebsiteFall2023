@@ -8,11 +8,11 @@ function Start_Moving() {
   const [isDisclaimerOpen, setDisclaimerOpen] = useState(false);
 
   return(
-    <div className='move'>
-      <div id="moving">
-        <h1 id="moving_header" class="text-center" >Start Moving!</h1>
+    <div>
+      <div>
+        <h1 className="flex flex-row justify-center text-center text-2xl font-bold" >Start Moving!</h1>
         <br/>
-        <div id="move m-4" class="text-center">Each of the following activities is demonstrated at three levels of intensity based on a participants general physical capabilities: Easy, Moderate, Vigorous.
+        <div className="text-center">Each of the following activities is demonstrated at three levels of intensity based on a participants general physical capabilities: Easy, Moderate, Vigorous.
           <br/>
           Please go to <button onClick={() => navigate('/tutorial')} className="underline text-green-700">How to Get Up and Move</button> for a brief overview of this program.
           <br/><br/>
@@ -49,20 +49,20 @@ function Start_Moving() {
       </div>
 
       <div> 
-        <br/> <h1 class="text-center">Guiding Videos</h1>
+        <br/> <h1 className="text-center">Guiding Videos</h1>
       </div>
 
-      <div class="text-center">
+      <div className="text-center">
         <Button label="Easy" onClick={() => navigate('/easy')}/>
         <Button label="Moderate" onClick={() => navigate('/moderate')} />
         <Button label="Vigorous" onClick={() => navigate('/vigorous')} />
       </div>
 
       <div> 
-        <br/> <h1 class="text-center">Teaching Videos</h1>
+        <br/> <h1 className="text-center">Teaching Videos</h1>
       </div>
 
-      <div class="text-center">
+      <div className="text-center">
         <Button label="Easy" onClick={() => navigate('/easyTeaching')}/>
         <Button label="Moderate" onClick={() => navigate('/moderateTeaching')} />
         <Button label="Vigorous" onClick={() => navigate('/vigorousTeaching')} />

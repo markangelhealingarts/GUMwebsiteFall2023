@@ -30,13 +30,20 @@ const UserPoints = () => {
   }, []);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+    <div className='p-2 items-center'>
+      <p className='text-lg'>
+        Hello, Loading...
+      </p>
+      <h1>Your Points: Loading...</h1>
+    </div>
+    );
   }
 
   return (
     <div className='p-2 items-center'>
       <p className='text-lg'>
-        Hello, {userData.username}
+        Hello, {auth.currentUser.displayName}
       </p>
       <h1>Your Points: {userData ? userData.points : 'Not available'}</h1>
     </div>

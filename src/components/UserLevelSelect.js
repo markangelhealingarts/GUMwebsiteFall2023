@@ -35,7 +35,6 @@ const UserLevelSelect = () => {
       const userRef = doc(db, 'Users', currentUser.uid);
       try {
         await updateDoc(userRef, { level: parseInt(newLevel, 10) });
-        console.log('User level updated');
       } catch (error) {
         console.error('Error updating user level:', error);
       }
