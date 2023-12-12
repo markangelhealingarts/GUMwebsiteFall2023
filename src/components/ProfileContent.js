@@ -1,5 +1,6 @@
 import React from 'react';
 import LogoutButton from './LogoutButton';
+import DeleteAccountButton from './DeleteAccountButton';
 import UserPoints from './UserPoints';
 import UserLevelSelect from './UserLevelSelect';
 import UserSchedule from './UserSchedule';
@@ -10,7 +11,10 @@ const ProfileContent = () => {
       <UserPoints />
       <UserLevelSelect />
       <UserSchedule />
-      <LogoutButton />
+      <div className='flex lg:justify-center justify-around pt-2 w-full '>
+        <LogoutButton />
+        <DeleteAccountButton />
+      </div>
     </div>
   );
 };

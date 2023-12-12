@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
-import Modal from 'react-modal';
-import Button from './Button'
+import React from 'react';
 
 function Privacy_Policy() {
     return(

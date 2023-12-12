@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import Button from './Button';
-import GUM_slideshow from '../assets/img/GUM_Orientation.png';
 
 function HomepageContent() {
   const [isMoreInfoOpen, setMoreInfoOpen] = useState(false);
@@ -10,10 +9,10 @@ function HomepageContent() {
   return (
     <div className='flex flex-col justify-center'>
       <div className='flex flex-col justify-center p-2'>
-        <h1 className='flex flex-row justify-center'>What is Get Up and Move?</h1>
-        <div className='flex flex-row justify-center'>Get Up and Move is a program that will encourage you to be a little more active throughout your day.</div>
+        <h1 className='flex flex-row justify-center text-center text-2xl font-bold underline mb-2'>What is Get Up and Move?</h1>
+        <div className='flex flex-row justify-center mb-2'>Get Up and Move is a program that will encourage you to be a little more active throughout your day.</div>
         
-        <div className='flex flex-row justify-center'>
+        <div className='flex flex-row lg:justify-center justify-evenly'>
           <Button label="Read more here" onClick={() => setMoreInfoOpen(true)}/>
           <Button label="Disclaimer" onClick={() => setDisclaimerOpen(true)}/>
         </div>

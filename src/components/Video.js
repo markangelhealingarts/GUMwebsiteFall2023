@@ -18,7 +18,7 @@ const Video = ({ video }) => {
         try {
           // Increment the points field by 1
           await updateDoc(userRef, {
-            points: increment(1)
+            points: increment(currentUser.level)
           });
           console.log('Point added to user profile');
         } catch (error) {

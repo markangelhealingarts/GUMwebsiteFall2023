@@ -3,10 +3,12 @@ import { useAuth } from '../AuthContext';
 import { db } from '../firebase';
 import { doc, getDoc, updateDoc } from 'firebase/firestore';
 import Button from './Button';
+import { useNavigate } from 'react-router-dom';
 
 const UserSchedule = () => {
   const { currentUser } = useAuth();
   const [schedule, setSchedule] = useState(Array(6).fill(''));
+  const navigate = useNavigate(); // Initialize the hook
 
   useEffect(() => {
     const fetchUserSchedule = async () => {
@@ -75,7 +77,9 @@ const UserSchedule = () => {
       try {
         await updateDoc(userRef, { timers: schedule });
         console.log('Schedule updated');
-        alert('Schedule updated');
+        // lazy fix, timer isnt reset after this saves, so to force timer to re read new schedule by loading home page. 
+        // doing '/profile' doesnt work due to how react works
+        navigate('/');
       } catch (error) {
         console.error('Error updating schedule:', error);
         alert('Error updating schedule');

@@ -1,11 +1,11 @@
-// src/components/Navbar.js
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 import { NavLink } from 'react-router-dom';
 import logo from '../assets/img/newLogoNoText.png';
 import { useAuth } from '../AuthContext';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const mobileMenuRef = useRef();
   const { currentUser } = useAuth();
   const navItems = [
     {name: 'Home', path: '/'},
@@ -22,9 +22,26 @@ const Navbar = () => {
     navItems.push({ name: currentUser.displayName || 'Profile', path: '/profile' });
   } else {
     navItems.push({ name: 'Login', path: '/login' });
-    navItems.push({ name: 'Sign Up', path: '/signup' });
   }
   
+  useEffect(() => {
+    // Function to handle outside click
+    const handleClickOutside = (event) => {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    // Add event listener when the menu is open
+    if (isOpen) {
+      window.addEventListener('mousedown', handleClickOutside);
+    }
+
+    // Clean up
+    return () => {
+      window.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <nav className="bg-blue-400 shadow-md">
@@ -63,7 +80,7 @@ const Navbar = () => {
         </ul>
         
         {/* Mobile Menu Button */}
-        <button className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+        <button className="lg:hidden" onClick={() => setIsOpen(true)}>
           <span className="block w-6 h-0.5 bg-gray-700 mb-1"></span>
           <span className="block w-6 h-0.5 bg-gray-700 mb-1"></span>
           <span className="block w-6 h-0.5 bg-gray-700"></span>
@@ -74,8 +91,8 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="fixed top-0 right-0 w-full h-full z-10 lg:hidden bg-gray-900 bg-opacity-50">
-            <div className="bg-blue-400 w-1/2 h-full absolute top-0 right-0 overflow-y-auto">
-              <ul className="text-right mt-4">
+            <div ref={mobileMenuRef} className="bg-blue-400 w-1/2 h-full absolute top-0 right-0 overflow-y-auto">
+              <ul className="text-left mt-4">
                 <li className="navi p-2">
                   <button onClick={() => setIsOpen(false)}>Close Menu</button>
                 </li>
@@ -97,6 +114,7 @@ const Navbar = () => {
                     <li key={item.name} className="navi p-2">
                       <NavLink
                         to={item.path}
+                        onClick={()=>setIsOpen(false)}
                         className={({ isActive }) => isActive ? 'navi_text font-bold' : 'navi_text'}>
                         {item.name}
                       </NavLink>

@@ -51,7 +51,10 @@ const LoginContent = () => {
           </button>
         </form>
         <p className="mt-4 text-center text-sm">
-          Forgot your password? <a href="/password-reset" className="text-blue-600 hover:underline">Reset it here.</a>
+          New to Get Up and Move? <a href="/#/signup" className="text-blue-600 hover:underline">Sign up here.</a>
+        </p>
+        <p className="mt-4 text-center text-sm">
+          Forgot your password? <a href="/#/password-reset" className="text-blue-600 hover:underline">Reset it here.</a>
         </p>
       </div>
     </div>
